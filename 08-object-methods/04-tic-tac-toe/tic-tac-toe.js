@@ -1,14 +1,19 @@
 // YOUR CODE BELOW
- 
+
+let emptyBoard = [
+    [null, null, null],
+    [null, null, null],
+    [null, null, null],
+]
+
 let ticTacToe = {
-    board: [
-        [null, null, null],
-        [null, null, null],
-        [null, null, null],
-    ],
+    board: emptyBoard,
 
     move: function(player, rowNum, colNum) {
-        if(!this.board[rowNum][colNum]) {
+        // if the row/column is empty
+        if(this.board[rowNum][colNum]===null) {
+       // if(!this.board[rowNum][colNum]) {
+
             this.board[rowNum][colNum] = player;
         }
 
@@ -18,11 +23,7 @@ let ticTacToe = {
     },
 
     clear: function() {
-        this.board = [
-            [null, null, null],
-            [null, null, null],
-            [null, null, null],
-        ],
+        this.board = emptyBoard
 
         console.log(this.board);
         return this.board;
